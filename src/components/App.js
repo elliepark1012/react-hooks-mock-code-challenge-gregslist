@@ -8,7 +8,7 @@ function App() {
   const [filteredListings, setFilteredListings] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:6001/listings")
+    fetch("http://localhost:3000/listings")
     .then(response => response.json())
     .then(listingsData => {
       setListings(listingsData)
@@ -25,7 +25,7 @@ function App() {
       return l.id !== listing.id
     }))
 
-    fetch(`http://localhost:6001/listings/${listing.id}`, {
+    fetch(`http://localhost:3000/listings/${listing.id}`, {
       method: "DELETE"
     })
   }
